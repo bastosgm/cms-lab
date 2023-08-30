@@ -1,0 +1,95 @@
+.headerContainer {
+  height: 6rem;
+  border-bottom: 1px solid var(--gray-200);
+
+  background: var(--gray-700);
+
+  .headerContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    max-width: 1120px;
+    height: 6rem;
+    margin: 0 auto 0 auto;
+    padding: 0 2rem 0 2rem;
+
+    img {
+      cursor: pointer;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      width: 30%;
+      height: 6rem;
+
+      a {
+        position: relative;
+        display: inline-block;
+        padding: 0 0.5rem 0 0.5rem;
+
+        line-height: 6rem;
+
+        color: var(--gray-100);
+
+        transition: color 0.2s;
+
+        // Aplica em todos, menos no primeiro
+        // & + a {
+        //   margin: 0 0 0 2rem;
+        // }
+
+        &:hover {
+          color: var(--white);
+        }
+
+        &.active {
+          color: #ffffff;
+          font-weight: bold;
+        }
+      }
+    }
+
+    .readyButton {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 3rem;
+      padding: 0 1.5rem 0 1.5rem;
+      border: 0;
+      border-radius: 3rem;
+
+      background: var(--blue-900);
+      color: var(--white);
+
+      font-weight: bold;
+
+      transition: filter 0.2s;
+
+      &:hover {
+        filter: brightness(1.1);
+      }
+    }
+  }
+}
+
+@media (max-width: 870px) {
+  .headerContainer {
+    height: 11rem;
+    padding: 0.5rem 0 0.5rem 0;
+
+    .headerContent {
+      display: flex;
+      flex-direction: column;
+
+      nav {
+        display: block;
+        margin: 0 auto 0 auto;
+      }
+
+      .readyButton {
+        display: none;
+      }
+    }
+  }
+}
