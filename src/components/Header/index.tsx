@@ -1,20 +1,43 @@
+"use client";
+
 import styles from "./styles.module.scss";
-import logo from "../../../public/images/sun.svg";
+import logo from "../../../public/images/logo.svg";
 import Image from "next/image";
-import Link from "next/link";
+import ActiveLink from "../ActiveLink";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
+  const path = usePathname();
+
   return (
     <header className={styles.headerContainer}>
       <div className={styles.headerContent}>
-        <a href="">
-          <Image width={50} src={logo} alt="futura imagem aqui" />
-        </a>
+        <ActiveLink href="/" activeClassName={styles.active} currentPath={path}>
+          <Image width={40} src={logo} alt="logo" />
+        </ActiveLink>
 
         <nav>
-          <Link href="/">Home</Link>
-          <Link href="/posts">Content</Link>
-          <Link href="/about">Who we are?</Link>
+          <ActiveLink
+            href="/"
+            activeClassName={styles.active}
+            currentPath={path}
+          >
+            Home
+          </ActiveLink>
+          <ActiveLink
+            href="/posts"
+            activeClassName={styles.active}
+            currentPath={path}
+          >
+            Content
+          </ActiveLink>
+          <ActiveLink
+            href="/about"
+            activeClassName={styles.active}
+            currentPath={path}
+          >
+            Who we are?
+          </ActiveLink>
         </nav>
 
         <a
