@@ -73,22 +73,36 @@
   }
 }
 
-@media (max-width: 870px) {
+@media (max-width: 900px) {
   .headerContainer {
     height: 11rem;
     padding: 0.5rem 0 0.5rem 0;
 
     .headerContent {
       display: flex;
+      justify-content: space-between;
       flex-direction: column;
 
       nav {
-        display: block;
+        display: flex;
+        width: 40%;
         margin: 0 auto 0 auto;
       }
 
       .readyButton {
         display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .headerContainer {
+    .headerContent {
+      nav {
+        display: flex;
+        width: 300px;
+        margin: 0 auto 0 auto;
       }
     }
   }
