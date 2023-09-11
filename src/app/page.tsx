@@ -3,6 +3,8 @@ import { Metadata } from "next";
 import styles from "./page.module.scss";
 import Image from "next/image";
 import banner from "@/../public/images/banner-exemplo.jpg";
+import getPrismicClient from "./lib/getPrismicClient";
+import { createClient } from "@/prismicio";
 
 export const metadata: Metadata = {
   title: "CMS | Home",
@@ -11,6 +13,10 @@ export const metadata: Metadata = {
 
 // TODO: refatorar os css`s e ajeitar a responsividade dos elementos antes de commitar e ir fazer a proxima aula
 export default function Home() {
+  const a = getPrismicClient().then((r) => r.data);
+
+  console.log(a);
+
   return (
     <main className={styles.container}>
       <div className={styles.containerHeader}>
