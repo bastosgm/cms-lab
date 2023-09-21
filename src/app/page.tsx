@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 import styles from "./page.module.scss";
 import getPrismicClient, { Content } from "./lib/getPrismicClient";
@@ -7,7 +6,6 @@ import Image from "next/image";
 
 export default function Home() {
   const [content, setContent] = useState<Content | null>();
-  console.log(content);
 
   useEffect(() => {
     getPrismicClient().then((r) => setContent(r));
@@ -58,7 +56,7 @@ export default function Home() {
               <h2>{content.secondSectionTitle}</h2>
               <span>{content.secondSectionDescription}</span>
             </section>
-            <img
+            <Image
               width={200}
               height={400}
               src={content.secondSectionImage}
