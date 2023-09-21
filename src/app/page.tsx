@@ -2,13 +2,16 @@
 "use client";
 import styles from "./page.module.scss";
 import getPrismicClient, { Content } from "./lib/getPrismicClient";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Image from "next/image";
 
-// TODO: refatorar os css`s e ajeitar a responsividade dos elementos antes de commitar e ir fazer a proxima aula
 export default function Home() {
   const [content, setContent] = useState<Content | null>();
-  getPrismicClient().then((r) => setContent(r));
   console.log(content);
+
+  useEffect(() => {
+    getPrismicClient().then((r) => setContent(r));
+  }, []);
 
   return (
     <main className={styles.container}>
@@ -25,7 +28,7 @@ export default function Home() {
                 <button>Let&apos;s get start it!</button>
               </a>
             </section>
-            <img
+            <Image
               width={100}
               height={400}
               src="/images/banner-exemplo.jpg"
@@ -36,19 +39,15 @@ export default function Home() {
           <hr className={styles.divisor} />
 
           <div className={styles.sectionContent}>
-            <img
+            <Image
               width={200}
               height={400}
-              src="/images/banner-exemplo.jpg"
+              src={content.secondSectionImage}
               alt="second banner"
             />
             <section>
-              <h2>Learn how to create Android and IOS applications</h2>
-              <span>
-                Illum cumque dicta, voluptas quibusdam expedita ab quia possimus
-                doloribus tempora tenetur debitis corporis beatae laudantium
-                fugiat corrupti, tempore dolore, unde ratione.
-              </span>
+              <h2>{content.secondSectionTitle}</h2>
+              <span>{content.secondSectionDescription}</span>
             </section>
           </div>
 
@@ -56,36 +55,25 @@ export default function Home() {
 
           <div className={styles.sectionContent}>
             <section>
-              <h2>Get better as a web developer now!</h2>
-              <span>
-                Illum cumque dicta, voluptas quibusdam expedita ab quia possimus
-                doloribus tempora tenetur debitis corporis beatae laudantium
-                fugiat corrupti, tempore dolore, unde ratione.
-              </span>
+              <h2>{content.secondSectionTitle}</h2>
+              <span>{content.secondSectionDescription}</span>
             </section>
             <img
               width={200}
               height={400}
-              src="/images/banner-exemplo.jpg"
+              src={content.secondSectionImage}
               alt="third banner"
             />
           </div>
 
           <div className={styles.nextLevelContent}>
-            {/* <Image
-          quality={100}
-          width={400}
-          height={100}
-          src={banner}
-          alt="banner"
-        /> */}
             <h2>
               About more than <span>15k</span> already power up their carreers
             </h2>
             <span>
               Don&apos;t miss the chance to get the best out of your carreer
             </span>
-            <a href="">
+            <a href={content.linkAction}>
               <button>Let&apos;s get start it!</button>
             </a>
           </div>
