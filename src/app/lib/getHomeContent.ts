@@ -1,8 +1,7 @@
-import Prismic from "@prismicio/client";
 import * as RichText from "@prismicio/richtext";
 import { createClient } from "@/prismicio";
 
-export interface Content {
+export interface HomeContent {
   title: string;
   subtitle: string;
   linkAction: string;
@@ -14,10 +13,9 @@ export interface Content {
   secondSectionImage: string;
 }
 
-export default async function getPrismicClient() {
+export default async function getHomeContent() {
   const client = createClient();
 
-  // TODO: resolver o erro de type "not page" que não faz muito sentido aparentemente
   const {
     title,
     subtitle,
@@ -30,7 +28,7 @@ export default async function getPrismicClient() {
     second_section_image,
   } = await client.getSingle("home").then((r) => r.data as any);
 
-  const content: Content = {
+  const homeContent: HomeContent = {
     title: RichText.asText(title),
     subtitle: RichText.asText(subtitle),
     linkAction: link_action.url,
@@ -42,7 +40,5 @@ export default async function getPrismicClient() {
     secondSectionImage: second_section_image.url,
   };
 
-  console.log(content);
-
-  return content;
+  return homeContent;
 }

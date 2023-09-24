@@ -1,14 +1,14 @@
 "use client";
 import styles from "./page.module.scss";
-import getPrismicClient, { Content } from "./lib/getPrismicClient";
+import getHomeContent, { HomeContent } from "./lib/getHomeContent";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
 export default function Home() {
-  const [content, setContent] = useState<Content | null>();
+  const [content, setContent] = useState<HomeContent | null>();
 
   useEffect(() => {
-    getPrismicClient().then((r) => setContent(r));
+    getHomeContent().then((r) => setContent(r));
   }, []);
 
   return (
