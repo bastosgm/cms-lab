@@ -37,7 +37,7 @@ export default async function getHomeContent(id: string) {
       !(error instanceof PrismicError) ||
       error.message !== `No documents were returned`
     ) {
-      console.error("An error has been occured: ", error);
+      console.error("An error has been occured: ", e);
       throw error;
     }
     return null;
