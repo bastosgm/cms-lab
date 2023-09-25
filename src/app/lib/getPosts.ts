@@ -1,7 +1,5 @@
-import Prismic from "@prismicio/client";
 import * as RichText from "@prismicio/richtext";
 import { createClient } from "@/prismicio";
-import { AllDocumentTypes, PostDocument } from "../../../prismicio-types";
 
 export interface PostContent {
   title: string;
