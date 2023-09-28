@@ -11,6 +11,9 @@ const nextConfig = {
     // ],
     domains: ["images.prismic.io"],
   },
+  publicRuntimeConfig: {
+    fontsDir: "./public/fonts",
+  },
 };
 
 module.exports = nextConfig;

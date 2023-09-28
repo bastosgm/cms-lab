@@ -1,6 +1,6 @@
 "use client";
 import styles from "./page.module.scss";
-import getHomeContent, { HomeContent } from "./lib/getHomeContent";
+import getHomeContent, { HomeContent } from "../lib/getHomeContent";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 

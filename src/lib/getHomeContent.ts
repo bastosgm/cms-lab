@@ -1,5 +1,5 @@
 import * as RichText from "@prismicio/richtext";
-import { createClient } from "@/prismicio";
+import { createClient } from "@/config/prismicio";
 
 export interface HomeContent {
   title: string;
@@ -26,6 +26,7 @@ export default async function getHomeContent() {
     second_section_title,
     second_section_description,
     second_section_image,
+    // @ts-ignore
   } = await client.getSingle("home").then((r) => r.data as any);
 
   const homeContent: HomeContent = {

@@ -4,6 +4,89 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
+/**
+ * Content for about documents
+ */
+interface AboutDocumentData {
+  /**
+   * title field in *about*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: Nome da empresa
+   * - **API ID Path**: about.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.TitleField;
+
+  /**
+   * description field in *about*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Descrição
+   * - **API ID Path**: about.description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * banner field in *about*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about.banner
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  banner: prismic.ImageField<never>;
+
+  /**
+   * instagram field in *about*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: Url do instagram
+   * - **API ID Path**: about.instagram
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  instagram: prismic.LinkField;
+
+  /**
+   * twitter field in *about*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: Url do twitter
+   * - **API ID Path**: about.twitter
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  twitter: prismic.LinkField;
+
+  /**
+   * linkedin field in *about*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: Url do linkedin
+   * - **API ID Path**: about.linkedin
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  linkedin: prismic.LinkField;
+}
+
+/**
+ * about document from Prismic
+ *
+ * - **API ID**: `about`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type AboutDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<Simplify<AboutDocumentData>, "about", Lang>;
+
 type HomeDocumentDataSlicesSlice = never;
 
 /**
@@ -271,7 +354,7 @@ interface PostDocumentData {
 export type PostDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PostDocumentData>, "post", Lang>;
 
-export type AllDocumentTypes = HomeDocument | PostDocument;
+export type AllDocumentTypes = AboutDocument | HomeDocument | PostDocument;
 
 declare module "@prismicio/client" {
   interface CreateClient {
@@ -283,6 +366,8 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      AboutDocument,
+      AboutDocumentData,
       HomeDocument,
       HomeDocumentData,
       HomeDocumentDataSlicesSlice,

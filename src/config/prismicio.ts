@@ -1,6 +1,6 @@
 import * as prismic from "@prismicio/client";
 import * as prismicNext from "@prismicio/next";
-import config from "../slicemachine.config.json";
+import config from "../../slicemachine.config.json";
 
 // TODO dar "yarn slicemachine" pra abrir o server e editar tipos dos conteudos: http://localhost:9999/page-types/home
 // TODO postar conteudo em si aqui: https://cmsbolado.prismic.io/documents/working?l=pt-br
@@ -21,10 +21,14 @@ const routes: prismic.ClientConfig["routes"] = [
     type: "home",
     path: "/",
   },
-  // {
-  //   type: "page",
-  //   path: "/posts",
-  // },
+  {
+    type: "post",
+    path: "/posts",
+  },
+  {
+    type: "about",
+    path: "/about",
+  },
 ];
 
 /**

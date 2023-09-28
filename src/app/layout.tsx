@@ -1,11 +1,47 @@
 import "./globals.scss";
 import Header from "@/components/Header";
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import localFont from "next/font/local";
 
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["400", "500", "700", "900"],
+const poppins = localFont({
+  src: [
+    {
+      path: "../../public/fonts/Poppins-Black.ttf",
+      weight: "900",
+      style: "black",
+    },
+    {
+      path: "../../public/fonts/Poppins-BlackItalic.ttf",
+      weight: "900",
+      style: "italic",
+    },
+    {
+      path: "../../public/fonts/Poppins-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/Poppins-BoldItalic.ttf",
+      weight: "700",
+      style: "italic",
+    },
+    {
+      path: "../../public/fonts/Poppins-Medium.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/Poppins-MediumItalic.ttf",
+      weight: "500",
+      style: "italic",
+    },
+    {
+      path: "../../public/fonts/Poppins-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -19,8 +55,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={poppins.className}>
+    <html lang="en" className={poppins.className}>
+      <body>
         <Header />
         {children}
       </body>
