@@ -1,5 +1,5 @@
 import * as RichText from "@prismicio/richtext";
-import { createClient } from "@/prismicio";
+import { createClient } from "@/config/prismicio";
 import { PrismicError } from "@prismicio/client";
 
 export interface uniquePost {
@@ -10,10 +10,12 @@ export interface uniquePost {
   updatedAt: string;
 }
 
-export default async function getHomeContent(id: string) {
+export default async function getPost(id: string) {
   const client = createClient();
+
   try {
     const response: any =
+      // @ts-ignore
       (await client.getByUID("post", String(id)).then((r) => r)) ?? null;
 
     const post: uniquePost = {
@@ -37,7 +39,7 @@ export default async function getHomeContent(id: string) {
       !(error instanceof PrismicError) ||
       error.message !== `No documents were returned`
     ) {
-      console.error("An error has been occured: ", e);
+      console.error("An error has been occured: ", error);
       throw error;
     }
     return null;

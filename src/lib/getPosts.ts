@@ -1,5 +1,5 @@
 import * as RichText from "@prismicio/richtext";
-import { createClient } from "@/prismicio";
+import { createClient } from "@/config/prismicio";
 
 export interface PostContent {
   title: string;
@@ -17,6 +17,7 @@ export default async function getPosts() {
   const client = createClient();
 
   const response = await client
+    // @ts-ignore
     .getAllByType("post", {
       orderings: {
         field: "document.last_publication_date desc",

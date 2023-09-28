@@ -3,7 +3,7 @@
 import styles from "./page.module.scss";
 import Link from "next/link";
 import Image from "next/image";
-import getPosts from "../lib/getPosts";
+import getPosts from "../../lib/getPosts";
 import { useEffect, useState } from "react";
 import { Post } from "./interfaces";
 

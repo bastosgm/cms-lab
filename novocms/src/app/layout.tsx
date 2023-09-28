@@ -1,5 +1,5 @@
 import { PrismicPreview } from "@prismicio/next";
-import { repositoryName } from "@/prismicio";
+import { repositoryName } from "@/config/prismicio";
 
 export default function RootLayout({
   children,

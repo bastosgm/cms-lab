@@ -1,3 +1,27 @@
+@font-face {
+  font-family: "Poppins";
+  src: url("/public/fonts/Poppins-Black.ttf") format("ttf"),
+    url("/public/fonts/Poppins-BlackItalic.ttf") format("ttf"),
+    url("/public/fonts/Poppins-Bold.ttf") format("ttf"),
+    url("/public/fonts/Poppins-BoldItalic.ttf") format("ttf"),
+    url("/public/fonts/Poppins-ExtraBold.ttf") format("ttf"),
+    url("/public/fonts/Poppins-ExtraBoldItalic.ttf") format("ttf"),
+    url("/public/fonts/Poppins-ExtraLight.ttf") format("ttf"),
+    url("/public/fonts/Poppins-ExtraLightItalic.ttf") format("ttf"),
+    url("/public/fonts/Poppins-Italic.ttf") format("ttf"),
+    url("/public/fonts/Poppins-Light.ttf") format("ttf"),
+    url("/public/fonts/Poppins-LightItalic.ttf") format("ttf"),
+    url("/public/fonts/Poppins-Medium.ttf") format("ttf"),
+    url("/public/fonts/Poppins-MediumItalic.ttf") format("ttf"),
+    url("/public/fonts/Poppins-Regular.ttf") format("ttf"),
+    url("/public/fonts/P-posts-SemiBold.ttf") format("ttf"),
+    url("/public/fonts/P-posts-SemiBoldItalic.ttf") format("ttf"),
+    url("/public/fonts/P-posts-Thin.ttf") format("ttf"),
+    url("/public/fonts/P-posts-ThinItalic.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
