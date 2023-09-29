@@ -1,22 +1,10 @@
-"use client";
-
 import styles from "./page.module.scss";
 import Link from "next/link";
 import Image from "next/image";
 import getPosts from "../../lib/getPosts";
-import { useEffect, useState } from "react";
-import { Post } from "./interfaces";
 
-export default function Posts() {
-  const [posts, setPosts] = useState<Post[]>([]);
-
-  useEffect(() => {
-    (async function fetchPosts() {
-      const posts = await getPosts();
-      setPosts(posts);
-    })();
-  }, []);
-
+export default async function Posts() {
+  const posts = await getPosts();
   // TODO: incrementar paginação pegando do projeto Iara
   return (
     <>
