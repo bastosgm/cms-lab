@@ -2,6 +2,7 @@ import styles from "./page.module.scss";
 import getHomeContent from "../lib/getHomeContent";
 import Image from "next/image";
 
+// TODO: tem que ver no ar se o component feiao de loading ta funfando
 export default async function Home() {
   const content = await getHomeContent();
 

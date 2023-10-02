@@ -1,15 +1,14 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
 import { useEffect, useState } from "react";
 import styles from "./post.module.scss";
-import { useParams } from "next/navigation";
 import getPost from "@/lib/getPost";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { IPostParams } from "./interfaces";
 
-export default function Post() {
-  const { slug } = useParams();
+export default function Post({ params }: IPostParams) {
+  const { slug } = params;
   const { push } = useRouter();
   const [post, setPost] = useState<any>();
 
