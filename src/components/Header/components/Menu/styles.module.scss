@@ -1,0 +1,52 @@
+.menu {
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+  height: 6rem;
+
+  a {
+    position: relative;
+    display: inline-block;
+    padding: 0 0.5rem 0 0.5rem;
+
+    line-height: 6rem;
+
+    color: var(--gray-100);
+
+    transition: color 0.2s;
+
+    // Aplica em todos, menos no primeiro
+    // & + a {
+    //   margin: 0 0 0 2rem;
+    // }
+
+    &:hover {
+      color: var(--white);
+    }
+
+    &.active {
+      color: #ffffff;
+      font-weight: bold;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .menu {
+    display: flex;
+    width: 40%;
+    margin: 0 auto 0 auto;
+  }
+
+  .readyButton {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .menu {
+    display: flex;
+    width: 300px;
+    margin: 0 auto 0 auto;
+  }
+}
