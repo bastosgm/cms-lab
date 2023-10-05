@@ -9,7 +9,7 @@ export default function Header() {
       <div className={styles.headerContent}>
         <Logo />
         <Menu />
-        <Button href="/">É um admin?</Button>
+        <Button href="/">É um colaborador?</Button>
       </div>
     </header>
   );

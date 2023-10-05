@@ -1,11 +1,15 @@
 .logo {
+  color: #ffffff;
+
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+
   cursor: pointer;
-  color: white;
-  line-height: 1;
 
   b {
-    font-weight: 900;
     color: var(--blue-900);
-    font-size: 1.25em;
+
+    font-weight: 900;
+    font-size: 1.5em;
   }
 }

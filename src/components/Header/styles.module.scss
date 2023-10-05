@@ -1,6 +1,5 @@
 .headerContainer {
-  height: 6rem;
-  border-bottom: 1px solid var(--gray-200);
+  height: 6em;
 
   background: var(--gray-700);
 
@@ -8,44 +7,19 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    max-width: 1120px;
-    height: 6rem;
+    max-width: 1100px;
+    height: 100%;
     margin: 0 auto 0 auto;
-    padding: 0 2rem 0 2rem;
   }
 }
 
 @media (max-width: 900px) {
   .headerContainer {
-    height: 11rem;
-    padding: 0.5rem 0 0.5rem 0;
+    height: 13em;
+    padding: 1em 0 1em 0;
 
     .headerContent {
-      display: flex;
-      justify-content: space-between;
       flex-direction: column;
-
-      nav {
-        display: flex;
-        width: 40%;
-        margin: 0 auto 0 auto;
-      }
-
-      .readyButton {
-        display: none;
-      }
-    }
-  }
-}
-
-@media (max-width: 640px) {
-  .headerContainer {
-    .headerContent {
-      nav {
-        display: flex;
-        width: 300px;
-        margin: 0 auto 0 auto;
-      }
     }
   }
 }

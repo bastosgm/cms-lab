@@ -3,7 +3,7 @@ import styles from "./styles.module.scss";
 
 export default function Button({ href, children }: ButtonProps) {
   return href ? (
-    <a className={styles.readyButton} href={href}>
+    <a className={styles.button} href={href}>
       {children}
     </a>
   ) : (
