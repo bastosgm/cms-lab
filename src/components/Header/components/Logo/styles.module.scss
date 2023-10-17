@@ -1,15 +1,13 @@
-.logo {
-  color: #ffffff;
+.imageContainer {
+  margin: auto 0 auto 0 !important;
+}
 
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
-
-  cursor: pointer;
-
-  b {
-    color: var(--blue-900);
-
-    font-weight: 900;
-    font-size: 1.5em;
+@media screen and (max-width: 56rem) {
+  .imageContainer {
+    img {
+      width: 120px;
+      height: 120px;
+      margin: 10px 0 auto 0;
+    }
   }
 }

@@ -2,22 +2,20 @@
   display: flex;
   justify-content: space-between;
   width: 400px;
+  margin: 25px auto 25px auto;
 
   a {
-    position: relative;
-    display: inline-block;
-
-    color: var(--gray-100);
+    color: var(--gray-200);
 
     transition: color 0.5s;
 
     &:hover {
-      color: var(--white);
+      color: var(--gray-900);
     }
 
     &.active {
-      color: #ffffff;
-      font-weight: bold;
+      color: var(--gray-900);
+      font-weight: 500;
     }
   }
 }

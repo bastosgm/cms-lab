@@ -3,6 +3,6 @@ import { ReactElement } from "react";
 
 export interface ActiveLinkProps extends LinkProps {
   children: string | ReactElement;
-  activeClassName: string;
+  activeClassName?: string;
   currentPath: string;
 }
