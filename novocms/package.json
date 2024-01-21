@@ -29,6 +29,6 @@
     "@slicemachine/adapter-next": "^0.3.13",
     "concurrently": "^8.2.0",
     "eslint-config-next": "^13.4.13",
-    "slice-machine-ui": "^1.11.0"
+    "slice-machine-ui": "^1.23.0"
   }
 }
